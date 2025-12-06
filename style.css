@@ -1,0 +1,141 @@
+/* style.css */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+}
+h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Navigasi */
+.nav-link {
+    transition: all 0.3s ease;
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f59e0b;
+    transition: width 0.3s ease;
+}
+.nav-link.active::after, .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    max-height: 400px;
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 400px;
+        max-height: 500px;
+    }
+}
+
+/* Flowchart Logic */
+.ecosystem-node {
+    transition: all 0.3s ease-in-out;
+}
+.ecosystem-node:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+.flowchart-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width:768px){
+    .flowchart-flex {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: start;
+        align-items: flex-start;
+    }
+}
+.ecosystem-node, .ecosystem-arrow {
+    flex: 0 0 auto;
+    width: 260px;
+    margin: 15px;
+    text-align: center;
+}
+/* Orientasi Panah */
+.ecosystem-arrow {
+    font-size: 2rem;
+    color: #f59e0b;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Audio Player */
+.audio-player-btn {
+    background-color: #f59e0b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+.audio-player-btn:hover {
+    background-color: #fbbf24;
+    transform: scale(1.1);
+}
+.audio-player-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+.title-with-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+/* Sertifikat Grid */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.cert-item {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.cert-item:hover {
+    transform: translateY(-5px);
+}
+.cert-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
